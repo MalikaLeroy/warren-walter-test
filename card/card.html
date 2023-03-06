@@ -1,61 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice "Card" – Formation Développer des interfaces web accessibles par Warren Walter</title>
-
     <link rel="stylesheet" href="card.css">
 </head>
+
 <body>
-
-    <!-- 
-        Instructions :
-
-        1. Télécharger le code source : OK
-        2. Ne rien touchez dans <head>
-        3. Les textes : "Camping", "Randonnée" et "voir" doivent être des liens
-        4. La "card" doit être accessible :
-            4.1. Vous pouvez utliser n'importe quelles balises HTML tant qu'elles améliorent l'accessibilité
-            4.2. Ne pas toucher à <main>
-            4.3. Le CSS peut / doit être fait aussi
-        5. Le chiffre 252 représente le nombre de commentaires
-        6. La "card" fait 300px de large
-        7. Camping et Randonnée doivent être des liens
-
-        ------------
-        Code couleur
-        ------------
-        Blanc : #FFFFFF
-        Noir : #000000
-        Vert : #D8E9D2
-        Gris foncé : #808080
-        Gris clair : #F3F3F3
-    -->
-
     <main class="main" id="main">
-
-        <div class="card">
+        <article class="card">
             <div class="card-img">
-                <img src="">
+                <img src="img/lac.jpg"
+                    alt="La vue depuis une barque sur le lac Misurina permet d'admirer la majestueuse montagne Sasso di Sesto">
             </div>
             <div class="card-header">
-                <span>4,5 / 5 (252)</span>
-                <span>Camping</span>
-                <span>Randonnée</span>
+                <p class="rating rating-positive"><span class="sr-only">Note des visiteurs : </span><span
+                        class="rating-score">4,5 / 5 </span>(<span class="sr-only">note basée sur </span>252<span
+                        class="sr-only"> commentaires</span>)</p>
+                <ul>
+                    <li><a href="#" aria-label="Voir toutes les activités de camping">Camping</a></li>
+                    <li><a href="#" aria-label="Voir toutes les activités de randonnée">Randonnée</a></li>
+                </ul>
             </div>
             <div class="card-content">
-                <span>Park Sexten en caravane</span>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elitsed do eiusmod.</span>
+                <h1>Park Sexten en caravane</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur
+                    adipiscing elitsed do eiusmod.</p>
             </div>
             <div class="card-footer">
-                <span>125 €</span>
-                <span>Voir</span>
+                <p>125 €</p>
+                <a href="#" aria-label="Voir plus d'informations sur cet établisement">Voir</a>
             </div>
-        </div>
-
+        </article>
     </main>
-
 </body>
+
 </html>
