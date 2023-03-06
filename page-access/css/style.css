@@ -1,0 +1,686 @@
+/*
+ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$
+| $$_____//$$__  $$| $$$ | $$|__  $$__/
+| $$     | $$  \ $$| $$$$| $$   | $$   
+| $$$$$  | $$  | $$| $$ $$ $$   | $$   
+| $$__/  | $$  | $$| $$  $$$$   | $$   
+| $$     | $$  | $$| $$\  $$$   | $$   
+| $$     |  $$$$$$/| $$ \  $$   | $$   
+|__/      \______/ |__/  \__/   |__/   
+*/
+
+/* Montserrat Regular - latin */
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../font/montserrat-v15-latin-500.woff2') format('woff2'), url('../font/montserrat-v15-latin-500.woff') format('woff');
+    font-display: swap; 
+}
+
+/* Montserrat Bold - latin */
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../font/montserrat-v15-latin-700.woff2') format('woff2'), url('../font/montserrat-v15-latin-700.woff') format('woff');
+    font-display: swap;
+}
+
+:root {
+    --white: #FFF;
+    --black: #0A0907;
+	
+    --txt: #384552;
+    
+    --red: #D53D0E;
+    
+    --orange: #F38B2A;
+    
+    --yellow: #F8E9AD;
+    --yellow-light: #F5F4D8;
+
+    --green-dark: #325747;
+    --green-medium: #CDCB45;
+    --green: #03BA79;
+}
+
+/*
+ /$$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$
+| $$__  $$| $$_____/ /$$__  $$| $$_____/|__  $$__/
+| $$  \ $$| $$      | $$  \__/| $$         | $$   
+| $$$$$$$/| $$$$$   |  $$$$$$ | $$$$$      | $$   
+| $$__  $$| $$__/    \____  $$| $$__/      | $$   
+| $$  \ $$| $$       /$$  \ $$| $$         | $$   
+| $$  | $$| $$$$$$$$|  $$$$$$/| $$$$$$$$   | $$   
+|__/  |__/|________/ \______/ |________/   |__/ 
+*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--white);
+    
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--txt);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: inherit;
+    text-align: left;
+}
+
+/*
+ /$$   /$$ /$$$$$$$$ /$$$$$$ /$$        /$$$$$$ 
+| $$  | $$|__  $$__/|_  $$_/| $$       /$$__  $$
+| $$  | $$   | $$     | $$  | $$      | $$  \__/
+| $$  | $$   | $$     | $$  | $$      |  $$$$$$ 
+| $$  | $$   | $$     | $$  | $$       \____  $$
+| $$  | $$   | $$     | $$  | $$       /$$  \ $$
+|  $$$$$$/   | $$    /$$$$$$| $$$$$$$$|  $$$$$$/
+ \______/    |__/   |______/|________/ \______/ 
+*/
+
+.sr-only {
+    position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/*
+ /$$$$$$  /$$$$$$   /$$$$$$  /$$   /$$
+|_  $$_/ /$$__  $$ /$$__  $$| $$$ | $$
+  | $$  | $$  \__/| $$  \ $$| $$$$| $$
+  | $$  | $$      | $$  | $$| $$ $$ $$
+  | $$  | $$      | $$  | $$| $$  $$$$
+  | $$  | $$    $$| $$  | $$| $$\  $$$
+ /$$$$$$|  $$$$$$/|  $$$$$$/| $$ \  $$
+|______/ \______/  \______/ |__/  \__/
+*/
+
+.icon {
+    /* display: block; */
+    padding: 1rem;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.icon-shop {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    background-image: url("../img/icon/shopping-cart.png");
+    background-size: 100%;
+
+    filter: invert(1);
+}
+
+/*
+ /$$   /$$ /$$   /$$
+| $$  | $$| $$$ | $$
+| $$  | $$| $$$$| $$
+| $$$$$$$$| $$ $$ $$
+| $$__  $$| $$  $$$$
+| $$  | $$| $$\  $$$
+| $$  | $$| $$ \  $$
+|__/  |__/|__/  \__/
+*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+h1 { 
+    font-size: 3.8rem;
+}
+
+h2, h3 { 
+    font-size: 3rem;
+}
+
+h4 { 
+    font-size: 2.6rem;
+}
+
+h5, h6 { 
+    font-size: 2rem;
+}
+
+/* Style */
+
+.container {
+    margin: 0 auto;
+    max-width: 300rem;
+}
+
+.inner {
+    max-width: 128rem;
+    margin: 0 auto;
+}
+
+/*
+ /$$   /$$ /$$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$$$ /$$$$$$$ 
+| $$  | $$| $$_____/ /$$__  $$| $$__  $$| $$_____/| $$__  $$
+| $$  | $$| $$      | $$  \ $$| $$  \ $$| $$      | $$  \ $$
+| $$$$$$$$| $$$$$   | $$$$$$$$| $$  | $$| $$$$$   | $$$$$$$/
+| $$__  $$| $$__/   | $$__  $$| $$  | $$| $$__/   | $$__  $$
+| $$  | $$| $$      | $$  | $$| $$  | $$| $$      | $$  \ $$
+| $$  | $$| $$$$$$$$| $$  | $$| $$$$$$$/| $$$$$$$$| $$  | $$
+|__/  |__/|________/|__/  |__/|_______/ |________/|__/  |__/
+*/
+
+.header {
+    padding: 2rem;
+    background-color: var(--yellow-light);
+}
+
+.header .inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color-palet {
+    display: flex;
+    flex-wrap: nowrap;  
+}
+
+.color-palet span {
+    flex-basis: 14.2857142857%;
+    height: 0.9rem;
+}
+
+.color-palet span:nth-of-type(1) { background-color: var(--black); }
+.color-palet span:nth-of-type(2) { background-color: var(--red); }
+.color-palet span:nth-of-type(3) { background-color: var(--orange); }
+.color-palet span:nth-of-type(4) { background-color: var(--green-dark); }
+.color-palet span:nth-of-type(5) { background-color: var(--green); }
+.color-palet span:nth-of-type(6) { background-color: var(--green-medium); }
+.color-palet span:nth-of-type(7) { background-color: var(--black); }
+
+.header-logo-link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--black);
+}
+
+.header-logo-img {
+    width: 10rem;
+    height: auto;
+}   
+
+.header-logo-baseline {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.header-nav {
+    display: flex;
+    padding: 0 2rem;
+    list-style: none;
+}
+
+.header-nav-item + .header-nav-item {
+    margin-left: 2rem;
+}
+
+.header-nav-link {
+    display: inline-block;
+    padding: 1.4rem 3.4rem 1.2rem;
+
+    border-radius: 2rem;
+
+    background-color: var(--green-medium);
+
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 700;
+    line-height: 1;
+
+    box-shadow: 0 0 0 0rem rgba(205, 203, 69, 0);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.header-nav-link:hover {
+    box-shadow: 0 0 0 0.6rem rgba(205, 203, 69, 0.5);
+}
+
+.header-search-form {
+    position: relative;
+    width: 20rem;
+}
+
+.header-search-input {
+    display: block;
+    width: 100%;
+    height: 4.2rem;
+
+    padding-left: 2rem;
+    padding-right: 5rem;
+
+    border: 0.2rem solid var(--red);
+    border-radius: 4rem;
+
+    background-color: var(--white);
+    outline: none;
+    color: var(--txt);
+    font-size: 1.6rem;
+}
+
+.header-search-btn {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    z-index: 2;
+
+    padding: 0.8rem;
+
+    width: 3.4rem;
+    height: 3.4rem;
+
+    border-radius: 100%;
+
+    background-color: var(--red);
+
+    text-align: center;
+    outline: none;
+    color: var(--white);
+    font-weight: 700;
+}
+
+/*
+ /$$$$$$$$ /$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$$ 
+| $$_____//$$__  $$ /$$__  $$|__  $$__/| $$_____/| $$__  $$
+| $$     | $$  \ $$| $$  \ $$   | $$   | $$      | $$  \ $$
+| $$$$$  | $$  | $$| $$  | $$   | $$   | $$$$$   | $$$$$$$/
+| $$__/  | $$  | $$| $$  | $$   | $$   | $$__/   | $$__  $$
+| $$     | $$  | $$| $$  | $$   | $$   | $$      | $$  \ $$
+| $$     |  $$$$$$/|  $$$$$$/   | $$   | $$$$$$$$| $$  | $$
+|__/      \______/  \______/    |__/   |________/|__/  |__/
+*/
+
+.footer {
+    padding: 4rem 2rem;
+
+    background-color: var(--black);  
+    text-align: center;
+    color: var(--white);
+}
+
+.credits-photo {
+    margin-top: 2rem;
+    list-style: none;
+}
+
+.credits-photo li {
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.credits-photo a {
+    color: var(--white);
+}
+
+/*
+  /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$ 
+ /$$__  $$| $$  | $$ /$$__  $$| $$__  $$
+| $$  \__/| $$  | $$| $$  \ $$| $$  \ $$
+|  $$$$$$ | $$$$$$$$| $$  | $$| $$$$$$$/
+ \____  $$| $$__  $$| $$  | $$| $$____/ 
+ /$$  \ $$| $$  | $$| $$  | $$| $$      
+|  $$$$$$/| $$  | $$|  $$$$$$/| $$      
+ \______/ |__/  |__/ \______/ |__/      
+*/
+
+.shoppingcart {
+    padding: 1rem;
+    width: 22rem;
+
+    border-radius: 2rem;
+
+    background-color: var(--green-dark);
+    
+    color: var(--white);
+}
+
+.shoppingcart-item-number {
+    font-weight: 700;
+    text-align: center;
+}
+
+.shoppingcart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+
+    font-size: 1.3rem;
+}
+
+.shoppingcart-list {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+}
+
+.shoppingcart-item + .shoppingcart-item {
+    border-top: 0.1rem dashed var(--white);
+}
+
+.shoppingcart-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    
+    border-radius: 3rem;
+
+    background: var(--black) url('../img/icon/close.svg') center center no-repeat;
+    background-size: 1rem;
+}
+
+.shoppingcart-valided {
+    margin: 0.4rem auto 0;
+    text-align: center;
+}
+
+.shoppingcart-valided[aria-hidden="true"] {
+    display: none;
+}
+
+.shoppingcart-valided button {
+    display: inline-block;
+    padding: 0.4rem 1.4rem; 
+
+    border-radius: 3rem;
+    background-color: var(--black);
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+/*
+  /$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$
+ /$$__  $$| $$_____/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$
+| $$  \__/| $$      | $$  \__/   | $$     | $$  | $$  \ $$| $$$$| $$
+|  $$$$$$ | $$$$$   | $$         | $$     | $$  | $$  | $$| $$ $$ $$
+ \____  $$| $$__/   | $$         | $$     | $$  | $$  | $$| $$  $$$$
+ /$$  \ $$| $$      | $$    $$   | $$     | $$  | $$  | $$| $$\  $$$
+|  $$$$$$/| $$$$$$$$|  $$$$$$/   | $$    /$$$$$$|  $$$$$$/| $$ \  $$
+ \______/ |________/ \______/    |__/   |______/ \______/ |__/  \__/
+*/
+
+.section {
+    padding: 10rem 2rem;
+}
+
+.section-1 {
+    background-color: var(--white);
+}
+
+.section-2 {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.section-3 {
+    background-color: var(--green-dark);
+    color: var(--white);
+}
+
+/*
+ /$$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$$
+| $$__  $$| $$__  $$ /$$__  $$| $$__  $$| $$  | $$ /$$__  $$|__  $$__/
+| $$  \ $$| $$  \ $$| $$  \ $$| $$  \ $$| $$  | $$| $$  \__/   | $$   
+| $$$$$$$/| $$$$$$$/| $$  | $$| $$  | $$| $$  | $$| $$         | $$   
+| $$____/ | $$__  $$| $$  | $$| $$  | $$| $$  | $$| $$         | $$   
+| $$      | $$  \ $$| $$  | $$| $$  | $$| $$  | $$| $$    $$   | $$   
+| $$      | $$  | $$|  $$$$$$/| $$$$$$$/|  $$$$$$/|  $$$$$$/   | $$   
+|__/      |__/  |__/ \______/ |_______/  \______/  \______/    |__/ 
+*/
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-top: 4rem;
+}
+
+.product-item {
+    flex-basis: 30%;
+    padding: 2rem;
+    border: 0.6rem solid var(--green);
+    border-radius: 2rem;
+    box-shadow: 0 0 0 0.6rem rgba(3, 186, 121, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 0 0 1.4rem rgba(3, 186, 121, 0.2);
+}
+
+.product-item + .product-item {
+    margin-left: 3%;
+}
+
+.product-img img {
+    border-radius: 1rem;
+}
+
+.product-title {
+    margin: 1rem 0;
+}
+
+.product-price {
+    display: inline-block;
+    margin: 2rem 1rem 1rem 0;
+    padding: 1.4rem 2rem;
+
+    border-radius: 3rem;
+    
+    background-color: var(--green);
+    
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.product-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    
+    border-radius: 3rem;
+    
+    background-color: var(--green-dark);
+
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1;
+
+    transition: background-color 0.3s ease;
+}
+
+.product-btn[aria-hidden="true"] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.product-btn:hover {
+    background-color: var(--black);
+}
+
+.product-btn span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.product-btn span + span {
+    margin-left: 0.4rem;
+}
+
+/*
+ /$$$$$$$$ /$$$$$$  /$$$$$$$  /$$       /$$$$$$$$
+|__  $$__//$$__  $$| $$__  $$| $$      | $$_____/
+   | $$  | $$  \ $$| $$  \ $$| $$      | $$      
+   | $$  | $$$$$$$$| $$$$$$$ | $$      | $$$$$   
+   | $$  | $$__  $$| $$__  $$| $$      | $$__/   
+   | $$  | $$  | $$| $$  \ $$| $$      | $$      
+   | $$  | $$  | $$| $$$$$$$/| $$$$$$$$| $$$$$$$$
+   |__/  |__/  |__/|_______/ |________/|________/
+*/
+
+table {
+    margin-top: 4rem;
+    width: 100%;
+    /* border: 0.4rem solid var(--txt); */
+    border-spacing: 0.4rem;
+    text-align: center;
+}
+
+.table thead th {
+    padding: 2rem;
+    width: 50%;
+    border-radius: 1rem;
+    background-color: var(--txt);
+    font-size: 2rem;
+}
+
+.table tbody th {
+    font-weight: 500;
+}
+
+.table tbody th,
+.table td {
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--white);
+    color: var(--txt);
+}
+
+/*
+ /$$$$$$$$ /$$$$$$  /$$$$$$$  /$$      /$$
+| $$_____//$$__  $$| $$__  $$| $$$    /$$$
+| $$     | $$  \ $$| $$  \ $$| $$$$  /$$$$
+| $$$$$  | $$  | $$| $$$$$$$/| $$ $$/$$ $$
+| $$__/  | $$  | $$| $$__  $$| $$  $$$| $$
+| $$     | $$  | $$| $$  \ $$| $$\  $ | $$
+| $$     |  $$$$$$/| $$  | $$| $$ \/  | $$
+|__/      \______/ |__/  |__/|__/     |__/
+*/
+
+.form {
+    margin: 3rem auto 0;
+    max-width: 60rem;
+}
+
+.form label,
+.form p {
+    display: block;
+}
+
+.form p + div, 
+.form p + div + div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form p + div + div {
+    margin-left: 2rem;
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    width: 100%;
+    height: 5rem;
+
+    border: 0.4rem solid var(--black);
+    border-radius: 0.8rem;
+
+    font-size: inherit;
+}
+
+.form div div input,
+.form div div label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.form-error {
+    display: block;
+    margin-top: 0.4rem;
+    padding: 1rem 2rem;
+
+    border-radius: 0.8rem;
+
+    background-color: var(--red);
+    
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.form-block + .form-block {
+    margin-top: 2rem;
+}
+
+.form-block-btn button {
+    margin-top: 2rem;
+    padding: 2rem 4rem;
+    
+    border: 0.4rem solid var(--black);
+    border-radius: 4rem;
+    
+    background-color: var(--black);
+    color: var(--white);
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-block-btn button:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
